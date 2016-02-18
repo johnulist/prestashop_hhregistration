@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>hhregistration</name>
+	<displayName><![CDATA[HH Registration]]></displayName>
+	<version><![CDATA[0.1.0]]></version>
+	<description><![CDATA[Sample module which show how to add fields to registration]]></description>
+	<author><![CDATA[hhennes]]></author>
+	<tab><![CDATA[hhennes]]></tab>
+	<is_configurable>0</is_configurable>
+	<need_instance>0</need_instance>
+	<limited_countries></limited_countries>
+</module>
