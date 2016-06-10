@@ -15,10 +15,11 @@ class hhregistration extends Module {
     private $_upload_dir = 'files/';
 
     public function __construct() {
+		
         $this->name = 'hhregistration';
         $this->tab = 'hhennes';
         $this->author = 'hhennes';
-        $this->version = '0.1.0';
+        $this->version = '0.1.1';
         $this->need_instance = 0;
 
         parent::__construct();
@@ -68,20 +69,19 @@ class hhregistration extends Module {
         //Gestion de l'upload via la classe d'upload prestashop
 
         //Pour un seul envoi
-        /*$uploader = new UploaderCore('file_input'); //Renseigner ici le nom du fichier envoyés
+        /*$uploader = new Uploader('file_input'); //Renseigner ici le nom du fichier envoyés
         $uploader->setAcceptTypes($this->_registration_allowed_extensions)
                 ->setCheckFileSize(UploaderCore::DEFAULT_MAX_SIZE)
                 ->setSavePath(dirname(__FILE__) . '/' . $this->_upload_dir)
                 ->process();*/
 
         //Pour plusieurs envois
-
-        $uploader = new UploaderCore(); //Renseigner ici le nom du fichier envoyés
+        $uploader = new Uploader();
         $uploader->setAcceptTypes($this->_registration_allowed_extensions)
                 ->setCheckFileSize(UploaderCore::DEFAULT_MAX_SIZE)
                 ->setSavePath(dirname(__FILE__) . '/' . $this->_upload_dir);
 
-        //Mettre ici les différents fichiers à envoyer (Possible aussi de faire une boucle sur $_FILES
+        //Mettre ici les différents fichiers à envoyer (Possible aussi de faire une boucle sur $_FILES )
         if ( isset($_FILES['file_input']))
             $uploader->upload ($_FILES['file_input']);
         if ( isset($_FILES['file_input2']))
